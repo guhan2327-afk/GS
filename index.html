@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover quality products at GS Products. Explore our collection and contact us to order.">
+  <title>GS Products | Quality for Everyday Living</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="announcement">
+    Welcome to GS Products — Quality Products, Trusted Service
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-icon">GS</span>
+        <span>GS <b>PRODUCTS</b></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="cart-button" id="openCart">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">WELCOME TO GS PRODUCTS</p>
+          <h1>Good Products.<br><span>Better Living.</span></h1>
+          <p class="hero-description">
+            Explore our collection of everyday essentials and
+            discover products selected with quality and value in mind.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-gold" href="#products">Explore Products ↗</a>
+            <a class="button button-outline" href="#about">Discover Our Story</a>
+          </div>
+          <div class="hero-note">
+            <span>✦</span> Your destination for everyday shopping
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1000&q=85"
+            alt="Carefully arranged lifestyle products"
+            onerror="this.style.display='none'">
+          <div class="hero-label">
+            <span>THE GS COLLECTION</span>
+            <strong>Quality in every choice.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <div><span>✧</span><div><strong>Quality Focus</strong><small>Products selected with care</small></div></div>
+        <div><span>◇</span><div><strong>Great Value</strong><small>Options for every budget</small></div></div>
+        <div><span>↗</span><div><strong>Easy Enquiries</strong><small>Contact us to place an order</small></div></div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Explore Our <span>Products</span></h2>
+            <p class="muted">Find something that suits your needs.</p>
+          </div>
+          <label class="search-box">
+            <span>⌕</span>
+            <input type="search" id="searchInput"
+              placeholder="Search products..." aria-label="Search products">
+          </label>
+        </div>
+
+        <div class="category-list" id="categoryList">
+          <button class="category active" data-category="All">All Products</button>
+          <button class="category" data-category="Electronics">Electronics</button>
+          <button class="category" data-category="Home">Home & Living</button>
+          <button class="category" data-category="Fashion">Fashion</button>
+          <button class="category" data-category="Accessories">Accessories</button>
+        </div>
+
+        <p class="results-text" id="resultsText">Browse our collection</p>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-message" id="emptyMessage" hidden>
+          No products found. Try a different search.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-section section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="about-monogram">GS<span>.</span></div>
+          <p>QUALITY · VALUE · SERVICE</p>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">ABOUT GS PRODUCTS</p>
+          <h2>Shopping made <span>simple.</span></h2>
+          <p>
+            GS Products is a growing business concept focused on
+            bringing different product categories together in one place.
+            Our goal is to make product discovery and customer enquiries
+            simple and convenient.
+          </p>
+          <p>
+            We believe that a good shopping experience begins with
+            clear information, helpful service and products that suit
+            our customers' needs.
+          </p>
+          <a href="#contact" class="button button-gold">Get in Touch ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-card">
+        <div>
+          <p class="eyebrow">WE'RE HERE TO HELP</p>
+          <h2>Looking for something <span>special?</span></h2>
+          <p class="muted">
+            Have a product question or want to place an order?
+            Contact GS Products.
+          </p>
+        </div>
+        <a class="button button-gold" id="contactButton" href="#"
+          target="_blank" rel="noopener">Contact Us on WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <span class="brand-icon">GS</span>
+        <span>GS <b>PRODUCTS</b></span>
+      </a>
+      <p>© <span id="year"></span> GS Products. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer"
+    role="dialog" aria-modal="true" aria-label="Shopping cart"
+    aria-hidden="true" inert>
+    <div class="cart-header">
+      <div><p class="eyebrow">YOUR SELECTION</p><h2>Shopping Cart</h2></div>
+      <button class="close-cart" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+      <p class="muted small">Delivery charges, availability and final pricing must be confirmed with us.</p>
+      <button class="button button-gold checkout-button" id="checkoutButton">
+        Enquire on WhatsApp ↗
+      </button>
+      <button class="clear-cart" id="clearCart">Clear cart</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
